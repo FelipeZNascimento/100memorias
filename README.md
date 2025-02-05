@@ -1,6 +1,6 @@
 # 100memorias
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a "Menu Generator" for a restaurant called 100 Memórias
 
 ## Recommended IDE Setup
 
