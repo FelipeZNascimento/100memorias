@@ -58,7 +58,7 @@ import { vOnClickOutside } from '@vueuse/components';
 // reactive state
 const isImageGenerated = ref(false);
 const menuTitle = ref('Menu Almoço');
-const menuPrice = ref('9.50');
+const menuPrice = ref('9.90');
 const menuDay = ref(getToday());
 const menuContent = ref([
   'Bacalhau espiritual',
@@ -123,13 +123,12 @@ function generateImage() {
     return;
   }
   const options = {
-    windowWidth: 1024,
-    windowHeight: 1024,
+    windowWidth: 1080,
+    windowHeight: 1080,
   };
 
   isImageGenerated.value = true;
   html2canvas(tileDiv, options).then(function (canvas) {
-    // const modalDiv = document.getElementById('modal');
     const generatedImageImg = document.getElementById('generatedImage') as HTMLImageElement;
     const generatedImageLinkTop = document.getElementById(
       'generatedImageLinkTop',
@@ -145,7 +144,6 @@ function generateImage() {
       generatedImageLinkTop.download = `${menuTitle.value} ${menuDay.value}`;
       generatedImageAnchorBottom.href = img;
       generatedImageAnchorBottom.download = `${menuTitle.value} ${menuDay.value}`;
-      console.log('test');
     }
   });
 }
@@ -280,7 +278,7 @@ button {
   &--title {
     margin: 0 auto;
     padding-top: 10%;
-    width: 40%;
+    width: 35%;
     font-weight: 600;
   }
 
@@ -295,15 +293,15 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 70%;
   }
 
   &--extras {
     position: absolute;
-    bottom: 20%;
+    bottom: 18%;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 40%;
+    width: 35%;
   }
   &--price {
     position: absolute;
@@ -338,7 +336,7 @@ button {
   @media (min-width: 321px) and (max-width: 425px) {
     &--title,
     &--price {
-      font-size: 26px;
+      font-size: 28px;
       line-height: 22px;
     }
 
@@ -348,13 +346,13 @@ button {
     }
 
     &--content {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 22px;
     }
 
     &--extras {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 12px;
+      line-height: 12px;
     }
   }
 
@@ -383,8 +381,8 @@ button {
   @media (min-width: 1025px) {
     &--title,
     &--price {
-      font-size: 60px;
-      line-height: 52px;
+      font-size: 70px;
+      line-height: 64px;
     }
 
     &--day {
@@ -393,13 +391,13 @@ button {
     }
 
     &--content {
-      font-size: 48px;
-      line-height: 60px;
+      font-size: 40px;
+      line-height: 64px;
     }
 
     &--extras {
-      font-size: 36px;
-      line-height: 36px;
+      font-size: 28px;
+      line-height: 28px;
     }
   }
 }
